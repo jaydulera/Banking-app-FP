@@ -13,6 +13,7 @@ class Account:
 
     @staticmethod
     def createAccount(fullName , bankAbbreviation):
+        """Returns newly created account object"""
         isBankExist , bank = Bank.findBank(fullName , bankAbbreviation)
         if not isBankExist:
             print("Bank does not Exist")
@@ -23,6 +24,7 @@ class Account:
         return account
 
     @staticmethod
+    """Returns required account object"""
     def findAccount(accountNumber):
         for account in Account.listOfAccounts:
             if account.accountNumber == accountNumber:
@@ -31,6 +33,7 @@ class Account:
 
     @staticmethod
     def getBalance(accountNumber):
+        """Returns most recently updated balance of required account"""
         isAccountExist , account = findAccount(accountNumber)
         if not isAccountExist:
             print("Account does not exist.")
@@ -39,6 +42,7 @@ class Account:
 
     @staticmethod
     def credit(amount , accountNumber):
+        """Credits required amount to said account"""
         isAccountExist , account = findAccount(accountNumber)
         if not isAccountExist:
             print("Account does not exist")
@@ -49,6 +53,7 @@ class Account:
             
     @staticmethod
     def debit(amount , accountNumber):
+        """Debits required amount from said account"""
         isAccountExist , account = findAccount(accountNumber)
         if not isAccountExist:
             print("Account does not exist")
