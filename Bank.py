@@ -11,6 +11,7 @@ class Bank:
     
     @staticmethod
     def createBank(fullName , bankAbbreviation):
+        """Returns newly created Bank object"""
         Bank._BankID += 1
         bank = Bank(Bank._BankID , fullName , bankAbbreviation)
         Bank.listOfBanks.append(bank)
@@ -18,6 +19,7 @@ class Bank:
 
     @staticmethod
     def findBank(fullName , bankAbbreviation):
+        """Returns required account object"""
         for bank in Bank.listOfBanks:
             if bank.fullName == fullName and bank.bankAbbreviation == bankAbbreviation:
                 return True , bank
